@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -46,6 +47,7 @@ function App() {
         mollitia explicabo quis consectetur commodi accusamus sequi voluptate
         similique est ea, quae esse atque ratione. Magnam, non aliquam!
       </p>
+      <Link to="/signup">Sign up</Link>
       <button onClick={toggleMode}>{isDarkMode ? "Light" : "Dark"}</button>
     </>
   );
