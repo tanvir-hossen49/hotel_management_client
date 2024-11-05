@@ -50,7 +50,7 @@ const Login = () => {
           )}
         </div>
 
-        <AnimatedButton>Log In</AnimatedButton>
+        <AnimatedButton buttonType="login">Log In</AnimatedButton>
       </div>
     </form>
   );
