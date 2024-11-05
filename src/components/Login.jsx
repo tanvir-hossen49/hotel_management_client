@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import Input from "./input";
+import { AnimatedButton, Input } from "./index";
 
 const Login = () => {
   const {
@@ -50,9 +50,7 @@ const Login = () => {
           )}
         </div>
 
-        <button className="animated-button w-full relative inline-flex items-center justify-center px-6 py-2 border-2 bg-transparent rounded-md overflow-hidden">
-          Log In
-        </button>
+        <AnimatedButton>Log In</AnimatedButton>
       </div>
     </form>
   );

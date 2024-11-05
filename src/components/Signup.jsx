@@ -1,5 +1,5 @@
 import { useForm, useWatch } from "react-hook-form";
-import Input from "./Input";
+import { Input, AnimatedButton } from "./index";
 
 const Signup = () => {
   const {
@@ -135,9 +135,7 @@ const Signup = () => {
 
       {/* button */}
       <div className="mt-5 text-center">
-        <button className="animated-button w-full md:w-1/2 relative inline-flex items-center justify-center px-6 py-2 border-2 bg-transparent rounded-md overflow-hidden">
-          Register
-        </button>
+        <AnimatedButton>Register</AnimatedButton>
       </div>
     </form>
   );
