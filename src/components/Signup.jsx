@@ -1,6 +1,5 @@
 import { useForm, useWatch } from "react-hook-form";
-import Input from "./input";
-import { Link } from "react-router-dom";
+import Input from "./Input";
 
 const Signup = () => {
   const {
@@ -19,7 +18,8 @@ const Signup = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
-      <div className="space-y-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {/* name */}
         <div>
           <Input
             label="Name"
@@ -40,6 +40,7 @@ const Signup = () => {
           {errors.name && <p className="error-msg">{errors.name.message}</p>}
         </div>
 
+        {/* email */}
         <div>
           <Input
             label="Email: "
@@ -57,6 +58,40 @@ const Signup = () => {
           {errors.email && <p className="error-msg">{errors.email.message}</p>}
         </div>
 
+        {/* phone */}
+        <div>
+          <Input
+            label="Phone: "
+            placeholder="Enter your Phone number"
+            required={false}
+            type="number"
+            {...register("phoneNumber", {
+              maxLength: {
+                value: 11,
+                message: "The Phone number must be 11 digit",
+              },
+            })}
+          />
+          {errors.phoneNumber && (
+            <p className="error-msg">{errors.phoneNumber.message}</p>
+          )}
+        </div>
+
+        {/* address */}
+        <div>
+          <Input
+            label="Address"
+            placeholder="ex: maijdee, Noakhali"
+            required={false}
+            type="text"
+            {...register("address")}
+          />
+          {errors.address && (
+            <p className="error-msg">{errors.address.message}</p>
+          )}
+        </div>
+
+        {/* password */}
         <div>
           <Input
             label="Password: "
@@ -80,6 +115,7 @@ const Signup = () => {
           )}
         </div>
 
+        {/* confirm password */}
         <div>
           <Input
             label="Confirm Password: "
@@ -95,8 +131,11 @@ const Signup = () => {
             <p className="error-msg">{errors.confirmPassword.message}</p>
           )}
         </div>
+      </div>
 
-        <button className="animated-button w-full relative inline-flex items-center justify-center px-6 py-2 border-2 bg-transparent rounded-md overflow-hidden">
+      {/* button */}
+      <div className="mt-5 text-center">
+        <button className="animated-button w-full md:w-1/2 relative inline-flex items-center justify-center px-6 py-2 border-2 bg-transparent rounded-md overflow-hidden">
           Register
         </button>
       </div>

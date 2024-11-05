@@ -1,7 +1,14 @@
 import React, { useState, useId } from "react";
 
 const Input = React.forwardRef(function Input(
-  { label, type = "text", className = "", autoComplete = "off", ...props },
+  {
+    label,
+    type = "text",
+    className = "",
+    autoComplete = "off",
+    required = true,
+    ...props
+  },
   ref
 ) {
   const [showPassword, setShowPassword] = useState(false); // State to track password visibility
@@ -16,7 +23,7 @@ const Input = React.forwardRef(function Input(
     <div className="w-full relative">
       {label && (
         <label className="inline-block mb-1 pl-1" htmlFor={id}>
-          {label} <span className="text-red-500">*</span>
+          {label} {required && <span className="text-red-500">*</span>}
         </label>
       )}
 
