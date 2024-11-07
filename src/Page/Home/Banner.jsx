@@ -1,10 +1,18 @@
+import { Navbar } from "../../components";
 
 const Banner = () => {
-    return (
-        <div>
-            <h1>Hello banner page</h1>
-        </div>
-    );
+  return (
+    <div
+      style={{
+        backgroundImage: "url('/src/assets/download.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh",
+      }}
+    >
+      <Navbar />
+    </div>
+  );
 };
 
 export default Banner;
