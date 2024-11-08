@@ -1,10 +1,10 @@
-import { Link, NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { Button, ToggleTheme } from "./index";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { Button, ToggleTheme } from "../index";
 
-const Navbar = () => {
+const NavItem = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -14,30 +14,8 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <nav
-      className={`${
-        isSticky
-          ? "bg-white dark:bg-black shadow-md fixed top-0 left-0 right-0 z-50"
-          : "bg-transparent text-black"
-      } py-4 transition-all duration-300`}
-    >
+    <>
       <div className="container flex justify-between items-center">
         {/* Branding or Logo */}
         <div className="text-lg font-semibold">ADB.com</div>
@@ -122,8 +100,8 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </nav>
+    </>
   );
 };
 
-export default Navbar;
+export default NavItem;
