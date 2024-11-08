@@ -21,24 +21,15 @@ const StickyNav = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        backgroundImage: "url('/src/assets/download.webp')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100vh",
-      }}
+    <nav
+      className={`${
+        isSticky
+          ? "bg-white dark:bg-black shadow-md"
+          : "bg-transparent text-black "
+      } py-4 transition-all duration-300 fixed top-0 left-0 right-0 z-50`}
     >
-      <nav
-        className={`${
-          isSticky
-            ? "bg-white dark:bg-black shadow-md fixed top-0 left-0 right-0 z-50"
-            : "bg-transparent text-black"
-        } py-4 transition-all duration-300`}
-      >
-        <NavItem />
-      </nav>
-    </div>
+      <NavItem />
+    </nav>
   );
 };
 

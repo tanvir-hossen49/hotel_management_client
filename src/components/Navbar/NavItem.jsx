@@ -21,7 +21,7 @@ const NavItem = () => {
         <div className="text-lg font-semibold">ADB.com</div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center justify-center space-x-8">
+        <div className="ml-auto mr-5 hidden md:flex items-center justify-center space-x-8">
           {navLinks.map(link => (
             <NavLink
               key={link.name}
