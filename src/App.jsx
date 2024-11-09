@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Home from "./Page/Home/Home";
+
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -32,24 +34,12 @@ function App() {
   }, [isDarkMode]);
 
   return (
-    <>
-      <h1>Home</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor vel
-        distinctio doloremque quibusdam tempora, odit culpa, aut laborum animi
-        numquam ex quaerat illo excepturi. A vero natus quam dolorem harum magni
-        nostrum ducimus tempore esse, illum suscipit exercitationem eius,
-        voluptates praesentium autem commodi unde voluptatum repellendus placeat
-        dicta reiciendis. Consectetur quaerat sit vel consequatur voluptas unde,
-        veritatis velit nobis nihil, eligendi placeat impedit vero explicabo
-        sequi. Perferendis exercitationem a ab perspiciatis ipsum cumque. Porro
-        dicta itaque corporis perspiciatis ad quibusdam laudantium perferendis
-        mollitia explicabo quis consectetur commodi accusamus sequi voluptate
-        similique est ea, quae esse atque ratione. Magnam, non aliquam!
-      </p>
-      <Link to="/signup">Sign up</Link>
-      <button onClick={toggleMode}>{isDarkMode ? "Light" : "Dark"}</button>
-    </>
+  
+      <div>
+        <Home></Home>
+      </div>
+      
+
   );
 }
 
