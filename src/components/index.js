@@ -6,6 +6,9 @@ import Navbar from "./Navbar/Navbar";
 import AnimatedButton from "./Button/AnimatedButton";
 import Button from "./Button/Button";
 import ToggleButton from "./Button/ToggleButton";
+import HorizontalDivider from "./divider/HorizontalDivider";
+import Icon from "./Icon/Icon";
+import CheckAvailability from "./CheckAvailability/CheckAvailability";
 
 export {
   Login,
@@ -16,4 +19,7 @@ export {
   ToggleButton,
   ToggleTheme,
   Navbar,
+  HorizontalDivider,
+  Icon,
+  CheckAvailability,
 };

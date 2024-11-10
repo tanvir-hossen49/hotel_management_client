@@ -1,4 +1,4 @@
-import Calender from "../../components/Calender";
+import { CheckAvailability } from "../../components/index";
 
 const Banner = () => {
   return (
@@ -11,7 +11,7 @@ const Banner = () => {
       }}
       className="flex justify-center items-center"
     >
-      <Calender />
+      <CheckAvailability />
     </div>
   );
 };

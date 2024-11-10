@@ -1,8 +1,8 @@
 const Button = ({
   children,
   type = "button",
-  bgColor,
-  textColor,
+  bgColor = "bg-[#43b45e]",
+  textColor = "text-white",
   className = "",
   ...props
 }) => {
