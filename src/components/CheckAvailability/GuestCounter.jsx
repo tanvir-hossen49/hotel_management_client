@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const GuestCounter = () => {
-  const [adults, setAdults] = useState(1);
-  const [children, setChildren] = useState(0);
-  const [room, setRoom] = useState(1);
-
-  // Function to handle increment
+const GuestCounter = ({
+  adults,
+  setAdults,
+  children,
+  setChildren,
+  room,
+  setRoom,
+}) => {
   const increment = type => {
     if (type === "adults") {
       setAdults(adults + 1);
@@ -16,7 +18,6 @@ const GuestCounter = () => {
     }
   };
 
-  // Function to handle decrement
   const decrement = type => {
     if (type === "adults" && adults > 1) {
       setAdults(adults - 1);

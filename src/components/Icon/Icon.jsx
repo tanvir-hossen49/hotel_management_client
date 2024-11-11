@@ -32,6 +32,18 @@ const Icon = ({ name, size = 24, fill = "none", stroke = "currentColor" }) => {
         <path d="M17 18h.01" />
       </svg>
     ),
+    search: (
+      <svg
+        width={size}
+        height={size}
+        fill={fill}
+        stroke={stroke}
+        viewBox="0 0 24 24"
+      >
+        <circle cx="11" cy="11" r="8" />
+        <path d="m21 21-4.3-4.3" />
+      </svg>
+    ),
     downArrow: (
       <svg
         width={size}

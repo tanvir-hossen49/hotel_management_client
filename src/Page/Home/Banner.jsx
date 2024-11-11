@@ -9,7 +9,7 @@ const Banner = () => {
         backgroundPosition: "center",
         height: "100vh",
       }}
-      className="flex justify-center items-center"
+      className="flex justify-center items-center container"
     >
       <CheckAvailability />
     </div>
