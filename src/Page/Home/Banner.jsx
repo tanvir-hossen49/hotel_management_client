@@ -5,6 +5,7 @@ import { div } from 'framer-motion/client';
 const Banner = () => {
     return (
         <div className='relive'>
+             create a just demo banner section
             <div
                 className="h-[90vh] bg-cover bg-center "
                 style={{
