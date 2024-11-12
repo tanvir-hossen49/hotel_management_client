@@ -1,10 +1,13 @@
-import React from "react";
-import Banner from "./Banner";
+import React, { lazy, Suspense } from "react";
+import { Loader } from "../../components/index";
+const Banner = lazy(() => import("./Banner"));
 
 const Home = () => {
   return (
     <div className="">
-      <Banner />
+      <Suspense fallback={<Loader />}>
+        <Banner />
+      </Suspense>
 
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, saepe

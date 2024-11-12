@@ -29,7 +29,7 @@ const GuestCounter = ({
   };
 
   return (
-    <div className="absolute bg-white mt-8 border border-1 rounded-lg p-4">
+    <div className="absolute bg-white mt-8 border border-1 rounded-lg p-4 select-none">
       <div>
         <span className="block font-medium text-gray-700">Adults</span>
         <div className="flex items-center mt-2">
