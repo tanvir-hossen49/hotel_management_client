@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import StickyNav from "./StickyNav";
 import NavItem from "./NavItem";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const pathname = location.pathname;
 
@@ -10,10 +12,10 @@ const Navbar = () => {
     <>
       {pathname !== "/" ? (
         <nav className="py-4">
-          <NavItem />
+          <NavItem isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         </nav>
       ) : (
-        <StickyNav />
+        <StickyNav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       )}
     </>
   );

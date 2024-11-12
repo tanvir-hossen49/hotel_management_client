@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { Icon, Loader } from "../../components/index";
+import Loader from "../../components/Loader";
+import Icon from "../../components/Icon/Icon";
 const CheckAvailability = lazy(() =>
   import("../../components/CheckAvailability/CheckAvailability")
 );
@@ -26,8 +27,10 @@ const Banner = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
         }`}
       >
-        <h1 className="text-5xl font-semibold">Welcome to Hotel Al Farah</h1>
-        <p className="flex justify-center text-base text-center mt-[2px]">
+        <h1 className="md:text-5xl text-2xl font-semibold">
+          Welcome to Hotel Al Farah
+        </h1>
+        <p className="flex justify-center md:text-base text-sm text-center mt-[2px]">
           <Icon name="location" />
           Maijdee, Noakhali
         </p>

@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
-import { AnimatedButton, Input } from "./index";
+import Input from "./Input";
+import AnimatedButton from "./Button/AnimatedButton";
 
 const Login = () => {
   const {

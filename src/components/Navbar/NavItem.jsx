@@ -1,11 +1,9 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import { Button, ToggleTheme } from "../index";
+import Button from "../Button/Button";
+import ToggleTheme from "../ToggleTheme";
+import Icon from "../Icon/Icon";
 
-const NavItem = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Rooms", path: "/rooms" },
@@ -21,7 +19,7 @@ const NavItem = () => {
         <div className="text-lg font-semibold">ADB.com</div>
 
         {/* Desktop Navigation */}
-        <div className="ml-auto mr-5 hidden md:flex items-center justify-center space-x-8">
+        <div className="ml-auto md:mr-5 hidden md:flex items-center justify-center space-x-8">
           {navLinks.map(link => (
             <NavLink
               key={link.name}
@@ -54,34 +52,33 @@ const NavItem = () => {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => setIsMenuOpen(prev => !prev)}
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
+          {isMenuOpen ? (
+            <div className="border p-1 rounded-full">
+              <Icon name="close" strokeWidth="2" />
+            </div>
+          ) : (
+            <Icon name="menu" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden mt-4 space-y-4 text-center animate-slide-down">
+        <div
+          className="bg-white py-3 md:hidden mt-4 space-y-4 text-center animate-slide-down"
+          onClick={() => setIsMenuOpen(prev => !prev)}
+        >
           {navLinks.map(link => (
             <NavLink
               key={link.name}
               to={link.path}
-              className="block hover:text-blue-600 transition duration-300"
-              activeClassName="font-bold text-blue-600"
+              className={({ isActive }) =>
+                isActive
+                  ? "block font-semibold bg-[#43b45e] text-white p-2 transition duration-300"
+                  : "hover:bg-[#43b45e] hover:text-white transition duration-300 block"
+              }
             >
               {link.name}
             </NavLink>
@@ -90,7 +87,7 @@ const NavItem = () => {
           <span className="block transition duration-300">BDT</span>
 
           <NavLink to="/signup">
-            <Button className="bg-[#43b45e] text-white p-2 rounded">
+            <Button className="bg-[#43b45e] text-white p-2 mt-2 rounded">
               Sign Up
             </Button>
           </NavLink>

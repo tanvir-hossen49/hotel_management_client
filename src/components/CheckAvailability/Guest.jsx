@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import GuestCounter from "./GuestCounter";
-import { Icon } from "../index.js";
+import Icon from "../Icon/Icon";
 
 const Guest = () => {
   const [openGuestCounter, setOpenGuestCounter] = useState(false);

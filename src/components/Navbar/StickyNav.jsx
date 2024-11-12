@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import NavItem from "./NavItem";
 
-const StickyNav = () => {
+const StickyNav = ({ isMenuOpen, setIsMenuOpen }) => {
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
@@ -23,12 +23,12 @@ const StickyNav = () => {
   return (
     <nav
       className={`${
-        isSticky
+        isMenuOpen || isSticky
           ? "bg-white dark:bg-black shadow-md"
-          : "bg-transparent text-black "
+          : "bg-transparent text-black"
       } py-4 transition-all duration-300 fixed top-0 left-0 right-0 z-50`}
     >
-      <NavItem />
+      <NavItem isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
     </nav>
   );
 };

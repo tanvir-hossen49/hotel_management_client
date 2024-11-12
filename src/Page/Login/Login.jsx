@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Login as LoginComponent } from "../../components/";
+import LoginComponent from "../../components/Login";
 
 const Login = () => {
   return (

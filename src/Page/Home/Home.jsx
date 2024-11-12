@@ -1,5 +1,5 @@
-import React, { lazy, Suspense } from "react";
-import { Loader } from "../../components/index";
+import { lazy, Suspense } from "react";
+import Loader from "../../components/Loader";
 const Banner = lazy(() => import("./Banner"));
 
 const Home = () => {

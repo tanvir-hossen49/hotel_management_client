@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ToggleButton } from "./index";
+import ToggleButton from "./Button/ToggleButton";
 
 const ToggleTheme = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {

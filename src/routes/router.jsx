@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 import MainLayout from "../layout/MainLayout";
-import { Loader } from "../components/index";
+import Loader from "../components/Loader";
 const Login = lazy(() => import("../Page/Login/Login"));
 const Signup = lazy(() => import("../Page/Signup/Signup"));
 const Rooms = lazy(() => import("../Page/Rooms/Rooms"));

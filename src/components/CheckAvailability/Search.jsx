@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Icon } from "../index";
+import Button from "../Button/Button";
+import Icon from "../Icon/Icon";
 
 const Search = () => {
   return (
