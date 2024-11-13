@@ -14,7 +14,7 @@ const Icon = ({
         height={size}
         fill={fill}
         stroke={stroke}
-        stroke-width={strokeWidth}
+        strokeWidth={strokeWidth}
         viewBox="0 0 24 24"
       >
         <circle cx="12" cy="8" r="5" />
@@ -27,7 +27,7 @@ const Icon = ({
         height={size}
         fill={fill}
         stroke={stroke}
-        stroke-width={strokeWidth}
+        strokeWidth={strokeWidth}
         viewBox="0 0 24 24"
       >
         <rect width="18" height="18" x="3" y="4" rx="2" />
@@ -46,7 +46,7 @@ const Icon = ({
         height={size}
         fill={fill}
         stroke={stroke}
-        stroke-width={strokeWidth}
+        strokeWidth={strokeWidth}
         viewBox="0 0 24 24"
       >
         <circle cx="11" cy="11" r="8" />
@@ -59,7 +59,7 @@ const Icon = ({
         height={size}
         fill={fill}
         stroke={stroke}
-        stroke-width={strokeWidth}
+        strokeWidth={strokeWidth}
         viewBox="0 0 24 24"
       >
         <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
@@ -72,7 +72,7 @@ const Icon = ({
         height={size}
         fill={fill}
         stroke={stroke}
-        stroke-width={strokeWidth}
+        strokeWidth={strokeWidth}
         viewBox="0 0 24 24"
       >
         <path
@@ -89,7 +89,7 @@ const Icon = ({
         height={size}
         fill={fill}
         stroke={stroke}
-        stroke-width={strokeWidth}
+        strokeWidth={strokeWidth}
         viewBox="0 0 24 24"
       >
         <path d="M18 6 6 18" />
@@ -102,7 +102,7 @@ const Icon = ({
         height={size}
         fill={fill}
         stroke={stroke}
-        stroke-width={strokeWidth}
+        strokeWidth={strokeWidth}
         viewBox="0 0 24 24"
       >
         <path d="m6 9 6 6 6-6" />

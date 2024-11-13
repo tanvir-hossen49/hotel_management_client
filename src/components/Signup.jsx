@@ -64,7 +64,7 @@ const Signup = () => {
           <Input
             label="Phone: "
             placeholder="Enter your Phone number"
-            required={false}
+            required={true}
             type="number"
             {...register("phoneNumber", {
               maxLength: {

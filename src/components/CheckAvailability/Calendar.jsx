@@ -1,8 +1,10 @@
-import { useState, useEffect, useRef } from "react";
-import { DateRange } from "react-date-range";
+import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import Icon from "../Icon/Icon";
+const DateRange = lazy(() =>
+  import("react-date-range").then(module => ({ default: module.DateRange }))
+);
 
 const Calendar = () => {
   const [openCalendar, setOpenCalendar] = useState(false);
@@ -65,13 +67,16 @@ const Calendar = () => {
 
       {openCalendar && (
         <div className="absolute top-full left-0 z-50 w-full md:w-auto transition-transform">
-          <DateRange
-            ranges={[selectionRange]}
-            onChange={handleSelect}
-            months={window.innerWidth < 768 ? 1 : 2}
-            direction={window.innerWidth < 768 ? "vertical" : "horizontal"}
-            minDate={new Date()}
-          />
+          <Suspense fallback={<div>Loading...</div>}>
+            <DateRange
+              ranges={[selectionRange]}
+              rangeColors={["#43b45e"]}
+              onChange={handleSelect}
+              months={window.innerWidth < 768 ? 1 : 2}
+              direction={window.innerWidth < 768 ? "vertical" : "horizontal"}
+              minDate={new Date()}
+            />
+          </Suspense>
         </div>
       )}
     </div>

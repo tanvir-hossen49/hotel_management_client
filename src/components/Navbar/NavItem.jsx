@@ -16,7 +16,7 @@ const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
     <>
       <div className="container flex justify-between items-center">
         {/* Branding or Logo */}
-        <div className="text-lg font-semibold">ADB.com</div>
+        <div className="text-lg font-semibold">Hotel Al Farah</div>
 
         {/* Desktop Navigation */}
         <div className="ml-auto md:mr-5 hidden md:flex items-center justify-center space-x-8">
