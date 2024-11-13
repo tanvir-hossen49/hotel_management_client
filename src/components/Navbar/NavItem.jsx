@@ -19,7 +19,7 @@ const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
         <div className="text-lg font-semibold">Hotel Al Farah</div>
 
         {/* Desktop Navigation */}
-        <div className="ml-auto md:mr-5 hidden md:flex items-center justify-center space-x-8">
+        <div className="ml-auto md:mr-5 hidden md:flex items-center justify-center md:space-x-4 lg:space-x-8 ">
           {navLinks.map(link => (
             <NavLink
               key={link.name}
@@ -46,7 +46,7 @@ const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
               Sign Up
             </Button>
           </NavLink>
-          <ToggleTheme />
+          {/* <ToggleTheme /> */}
         </div>
 
         {/* Mobile Menu Button */}
