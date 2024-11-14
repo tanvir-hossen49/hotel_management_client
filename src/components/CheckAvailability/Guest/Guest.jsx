@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import GuestSummary from "./GuestSummary";
 import GuestCounter from "./GuestCounter";
 import Icon from "../../Icon/Icon";
+import useOutsideClick from "../../../hooks/useOutsideClick";
 
 const Guest = () => {
   const [openGuestCounter, setOpenGuestCounter] = useState(false);
@@ -10,25 +11,8 @@ const Guest = () => {
     { name: "Children", count: 0, default: 0 },
     { name: "Room", count: 1, default: 1 },
   ]);
-
   const guestCounterRef = useRef(null);
-
-  // Close GuestCounter when clicking outside
-  useEffect(() => {
-    const handleClickOutside = event => {
-      if (
-        guestCounterRef.current &&
-        !guestCounterRef.current.contains(event.target)
-      ) {
-        setOpenGuestCounter(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  useOutsideClick(guestCounterRef, () => setOpenGuestCounter(false));
 
   return (
     <div className="flex gap-2 cursor-pointer relative p-2 border rounded-md md:flex-row md:gap-4 md:p-4">

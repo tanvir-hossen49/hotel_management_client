@@ -1,0 +1,13 @@
+:root {
+  --background: #ffffff;
+  --foreground: #333333;
+  --muted: #f8f9fa;
+  --muted-foreground: #6c757d;
+}
+
+body.dark {
+  --background: #121212;
+  --foreground: #e0e0e0;
+  --muted: #1f1f1f;
+  --muted-foreground: #b0b0b0;
+}

@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 import NavLinks from "./NavLinks";
 import CurrencySelector from "./CurrencySelector";
-import ToggleTheme from "../ToggleTheme";
+// import ToggleTheme from "../ToggleTheme";
 
 const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
@@ -23,7 +23,7 @@ const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
               Sign Up
             </Button>
           </NavLink>
-          <ToggleTheme />
+          {/* <ToggleTheme /> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -49,9 +49,9 @@ const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
             </Button>
           </NavLink>
 
-          <div className="flex justify-center mt-2">
+          {/* <div className="flex justify-center mt-2">
             <ToggleTheme />
-          </div>
+          </div> */}
         </div>
       )}
     </>

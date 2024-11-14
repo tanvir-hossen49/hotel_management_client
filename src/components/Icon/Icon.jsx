@@ -96,6 +96,19 @@ const Icon = ({
         <path d="m6 6 12 12" />
       </svg>
     ),
+    flag: (
+      <svg
+        width={size}
+        height={size}
+        fill={fill}
+        stroke={stroke}
+        strokeWidth={strokeWidth}
+        viewBox="0 0 24 24"
+      >
+        <circle cx="12" cy="12" r="10" fill="green" />
+        <circle cx="12" cy="12" r="5" fill="red" />
+      </svg>
+    ),
     downArrow: (
       <svg
         width={size}
