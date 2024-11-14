@@ -2,9 +2,9 @@ import Banner from "./Banner";
 
 const Home = () => {
   return (
-    <div className="">
+    <div>
       <Banner />
-      <div>
+      <div className="container">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, saepe
         amet labore atque possimus harum ab veritatis? Tempora enim quas
         dignissimos, id magnam et aliquam blanditiis ex explicabo ducimus error

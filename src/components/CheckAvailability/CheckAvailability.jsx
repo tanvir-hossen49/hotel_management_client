@@ -1,5 +1,5 @@
-import Calendar from "./Calendar";
-import Guest from "./Guest";
+import Calendar from "./Calendar/Calendar";
+import Guest from "./Guest/Guest";
 import Search from "./Search";
 
 const CheckAvailability = () => {

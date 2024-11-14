@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import GuestSummary from "./GuestSummary";
 import GuestCounter from "./GuestCounter";
-import Icon from "../Icon/Icon";
+import Icon from "../../Icon/Icon";
 
 const Guest = () => {
   const [openGuestCounter, setOpenGuestCounter] = useState(false);
@@ -29,23 +30,6 @@ const Guest = () => {
     };
   }, []);
 
-  // Helper function to format the guest summary text
-  const formatGuestSummary = () => {
-    const [adults, children, rooms] = guestCounts;
-    const adultText = `${adults.count} Adult${adults.count > 1 ? "s" : ""}`;
-    const childrenText = `${children.count} ${
-      children.count > 1 ? "Children" : "Child"
-    }`;
-    const roomText = `${rooms.count} Room${rooms.count > 1 ? "s" : ""}`;
-    return (
-      <div className="flex gap-3">
-        <span>{adultText}</span>
-        <span>{childrenText}</span>
-        <span>{roomText}</span>
-      </div>
-    );
-  };
-
   return (
     <div className="flex gap-2 cursor-pointer relative p-2 border rounded-md md:flex-row md:gap-4 md:p-4">
       <span>
@@ -57,7 +41,7 @@ const Guest = () => {
           className="flex gap-4 text-center"
           onClick={() => setOpenGuestCounter(!openGuestCounter)}
         >
-          {formatGuestSummary()}
+          <GuestSummary guestCounts={guestCounts} />
         </div>
 
         {openGuestCounter && (
