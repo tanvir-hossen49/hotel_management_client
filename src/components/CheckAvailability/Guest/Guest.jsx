@@ -1,12 +1,16 @@
 import { useEffect, useRef, useState } from "react";
+import GuestSummary from "./GuestSummary";
 import GuestCounter from "./GuestCounter";
-import { Icon } from "../index.js";
+import Icon from "../../Icon/Icon";
 
 const Guest = () => {
   const [openGuestCounter, setOpenGuestCounter] = useState(false);
-  const [adults, setAdults] = useState(1);
-  const [children, setChildren] = useState(0);
-  const [room, setRoom] = useState(1);
+  const [guestCounts, setGuestCounts] = useState([
+    { name: "Adult", count: 1, default: 1 },
+    { name: "Children", count: 0, default: 0 },
+    { name: "Room", count: 1, default: 1 },
+  ]);
+
   const guestCounterRef = useRef(null);
 
   // Close GuestCounter when clicking outside
@@ -20,10 +24,7 @@ const Guest = () => {
       }
     };
 
-    // Add event listener
     document.addEventListener("mousedown", handleClickOutside);
-
-    // Clean up the event listener
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -34,31 +35,23 @@ const Guest = () => {
       <span>
         <Icon name="user" />
       </span>
+
       <div ref={guestCounterRef}>
         <div
-          className="flex gap-4 select-none text-center"
+          className="flex gap-4 text-center"
           onClick={() => setOpenGuestCounter(!openGuestCounter)}
         >
-          <span>
-            {adults} Adult{adults > 1 ? "s" : ""}
-          </span>
-          <span>{children} Children</span>
-          <span>
-            {room} Room{room > 1 ? "s" : ""}
-          </span>
+          <GuestSummary guestCounts={guestCounts} />
         </div>
 
         {openGuestCounter && (
           <GuestCounter
-            adults={adults}
-            setAdults={setAdults}
-            children={children}
-            setChildren={setChildren}
-            room={room}
-            setRoom={setRoom}
+            guestCounts={guestCounts}
+            setGuestCounts={setGuestCounts}
           />
         )}
       </div>
+
       <span>
         <Icon name="downArrow" />
       </span>

@@ -1,30 +1,76 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
+
 import MainLayout from "../layout/MainLayout";
-import Home from "../Page/Home/Home";
-import Login from "../Page/Login/Login";
-import Signup from "../Page/Signup/Signup";
-import Rooms from "../Page/Rooms/Rooms";
-import Features from "../Page/Features/Features";
-import Blog from "../Page/Blog/Blog";
-import Contact from "../Page/Contact/Contact";
+import Loader from "../components/Loader";
+const Login = lazy(() => import("../Page/Login/Login"));
+const Signup = lazy(() => import("../Page/Signup/Signup"));
+const Rooms = lazy(() => import("../Page/Rooms/Rooms"));
+const Features = lazy(() => import("../Page/Features/Features"));
+const Blog = lazy(() => import("../Page/Blog/Blog"));
+const Contact = lazy(() => import("../Page/Contact/Contact"));
+const Home = lazy(() => import("../Page/Home/Home"));
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
     children: [
-      { path: "/", element: <Home /> },
-      { path: "/rooms", element: <Rooms /> },
-      { path: "/features", element: <Features /> },
-      { path: "/blog", element: <Blog /> },
-      { path: "/contact", element: <Contact /> },
+      {
+        path: "/",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/rooms",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Rooms />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/features",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Features />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/blog",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Blog />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/contact",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Contact />
+          </Suspense>
+        ),
+      },
       {
         path: "login",
-        element: <Login />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Login />
+          </Suspense>
+        ),
       },
       {
         path: "signup",
-        element: <Signup />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Signup />
+          </Suspense>
+        ),
       },
     ],
   },

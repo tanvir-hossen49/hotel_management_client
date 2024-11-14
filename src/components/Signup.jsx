@@ -1,5 +1,6 @@
 import { useForm, useWatch } from "react-hook-form";
-import { Input, AnimatedButton } from "./index";
+import Input from "./Input";
+import AnimatedButton from "./Button/AnimatedButton";
 
 const Signup = () => {
   const {
@@ -63,7 +64,7 @@ const Signup = () => {
           <Input
             label="Phone: "
             placeholder="Enter your Phone number"
-            required={false}
+            required={true}
             type="number"
             {...register("phoneNumber", {
               maxLength: {
