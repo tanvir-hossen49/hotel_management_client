@@ -1,9 +1,16 @@
 import { useForm, useWatch } from "react-hook-form";
 import Input from "./Input";
 import AnimatedButton from "./Button/AnimatedButton";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../store/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
+
   const {
     handleSubmit,
     register,
@@ -16,7 +23,23 @@ const Signup = () => {
 
   const onSubmit = async data => {
     setLoading(true);
+
     try {
+      const response = await fetch("http://localhost:3000/api/users/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        throw new Error(result.message);
+      }
+      dispatch(login(result.payload));
+      navigate("/");
     } catch (error) {
       console.log(error.message);
     } finally {
@@ -143,7 +166,9 @@ const Signup = () => {
 
       {/* button */}
       <div className="mt-5 text-center">
-        <AnimatedButton>Register</AnimatedButton>
+        <AnimatedButton disabled={loading} className="md:w-2/3">
+          {loading ? "Loading..." : "Register"}{" "}
+        </AnimatedButton>
       </div>
     </form>
   );
