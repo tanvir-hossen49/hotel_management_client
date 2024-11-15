@@ -9,10 +9,8 @@ const Banner = () => {
         backgroundImage: `url(${bannerImg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        width: "100vw",
-        height: "650px",
       }}
-      className="flex flex-col justify-center items-center"
+      className="flex h-[650px] w-full flex-col justify-center items-center"
     >
       <BannerContent />
       <AvailabilityChecker />

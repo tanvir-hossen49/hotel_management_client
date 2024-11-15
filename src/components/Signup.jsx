@@ -3,6 +3,7 @@ import Input from "./Input";
 import AnimatedButton from "./Button/AnimatedButton";
 
 const Signup = () => {
+  const [loading, setLoading] = useState(false);
   const {
     handleSubmit,
     register,
@@ -13,8 +14,14 @@ const Signup = () => {
   // Watch the password field
   const password = useWatch({ control, name: "password", defaultValue: "" });
 
-  const onSubmit = data => {
-    console.log(data);
+  const onSubmit = async data => {
+    setLoading(true);
+    try {
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
