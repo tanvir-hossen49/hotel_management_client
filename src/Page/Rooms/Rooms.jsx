@@ -22,7 +22,7 @@ const Rooms = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
         {
           apartments.map((apartment, index) => <RoomCard key={index} apartment={apartment}></RoomCard>
 
