@@ -1,47 +1,35 @@
 import React, { useEffect, useState } from "react";
+import RoomCard from "./RoomCard";
 
 
 const Rooms = () => {
 
 
   const [apartments, setApartments] = useState([])
-  
 
-  useEffect(()=>{
+
+  useEffect(() => {
     fetch('rooms.json')
-    .then((res)=> res.json())
-    .then((data)=> {
-      setApartments(data)
-  
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        setApartments(data)
 
-  },[])
+      })
 
- console.log(apartments)
+  }, [])
+
+  console.log(apartments)
 
   return (
     <div>
-       {
-        apartments.map((apartment, index)=> 
-          <div key={index} className="card card-compact bg-base-100 w-96 shadow-xl">
-        <figure>
-          <img
-            src={apartment.apartment_image}
-            alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-          </div>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+        {
+          apartments.map((apartment, index) => <RoomCard key={index} apartment={apartment}></RoomCard>
+
+            
+          )
+        }
       </div>
-            
-        
-            
-        )
-       }
     </div>
   );
 };
