@@ -14,7 +14,7 @@ const BannerContent = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
       }`}
     >
-      <h1 className="md:text-5xl sm:text-4xl text-2xl font-semibold">
+      <h1 className="md:text-5xl sm:text-4xl text-2xl font-semibold text-center">
         Welcome to Hotel Al Farah
       </h1>
       <p className="flex justify-center sm:text-base text-sm text-center mt-[2px]">

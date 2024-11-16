@@ -39,7 +39,7 @@ const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="bg-white py-3 md:hidden mt-4 space-y-4 text-center animate-slide-down">
+        <div className="bg-white py-3 md:hidden mt-4 space-y-4 text-center">
           <NavLinks onClick={() => setIsMenuOpen(false)} />
           <CurrencySelector />
 

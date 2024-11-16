@@ -1,4 +1,5 @@
 import React, { useState, useId } from "react";
+import Icon from "./Icon/Icon";
 
 const Input = React.forwardRef(function Input(
   {
@@ -11,7 +12,7 @@ const Input = React.forwardRef(function Input(
   },
   ref
 ) {
-  const [showPassword, setShowPassword] = useState(false); // State to track password visibility
+  const [showPassword, setShowPassword] = useState(false);
   const id = useId();
 
   // Toggle password visibility
@@ -29,7 +30,7 @@ const Input = React.forwardRef(function Input(
 
       <input
         type={showPassword ? "text" : type} // Toggle between "text" and "password"
-        className={`px-3 py-2 rounded-lg outline-none focus:border-[#3B9DF8] transition-colors duration-300 border dark.text-black bg-transparent w-full ${className}`}
+        className={`px-3 py-2 rounded-lg outline-none focus:border-[#3B9DF8] transition-colors duration-300 border bg-transparent w-full ${className}`}
         ref={ref}
         autoComplete={autoComplete}
         {...props}
@@ -42,7 +43,7 @@ const Input = React.forwardRef(function Input(
           onClick={togglePasswordVisibility}
           className="absolute right-3 bottom-3 text-sm focus:outline-none"
         >
-          {showPassword ? "Hide" : "Show"}
+          {showPassword ? <Icon name="show" /> : <Icon name="hide" />}
         </button>
       )}
     </div>
