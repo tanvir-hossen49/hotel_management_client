@@ -1,11 +1,11 @@
 import { lazy, Suspense } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-const DateRange = lazy(() =>
-  import("react-date-range").then(module => ({ default: module.DateRange }))
-);
 
 const CalendarModal = ({ selectionRange, onSelect, isOpen }) => {
+  const DateRange = lazy(() =>
+    import("react-date-range").then(module => ({ default: module.DateRange }))
+  );
   if (!isOpen) return null;
 
   return (
