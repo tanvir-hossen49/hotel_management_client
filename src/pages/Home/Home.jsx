@@ -1,5 +1,9 @@
+<<<<<<< HEAD:src/Page/Home/Home.jsx
 import React from "react";
 import Banner from "./Banner";
+=======
+import Banner from "./Banner/Banner";
+>>>>>>> 5c84b63300bb5816162f735389d4dcaa153b88cc:src/pages/Home/Home.jsx
 
 const Home = () => {
   return (

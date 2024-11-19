@@ -1,3 +1,10 @@
+.error-msg {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: 300;
+}
+
 .animated-button::before {
   content: "";
   position: absolute;

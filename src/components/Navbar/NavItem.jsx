@@ -3,12 +3,12 @@ import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 import NavLinks from "./NavLinks";
 import CurrencySelector from "./CurrencySelector";
-import ToggleTheme from "../ToggleTheme";
+// import ToggleTheme from "../ToggleTheme";
 
 const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <>
-      <div className="container flex justify-between items-center">
+      <div className="flex justify-between items-center px-4 sm:px-6 lg:px-8">
         {/* Branding or Logo */}
         <div className="text-lg font-semibold">Hotel Al Farah</div>
 
@@ -23,7 +23,7 @@ const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
               Sign Up
             </Button>
           </NavLink>
-          <ToggleTheme />
+          {/* <ToggleTheme /> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -39,7 +39,7 @@ const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="bg-white py-3 md:hidden mt-4 space-y-4 text-center animate-slide-down">
+        <div className="bg-white py-3 md:hidden mt-4 space-y-4 text-center">
           <NavLinks onClick={() => setIsMenuOpen(false)} />
           <CurrencySelector />
 
@@ -49,9 +49,9 @@ const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
             </Button>
           </NavLink>
 
-          <div className="flex justify-center mt-2">
+          {/* <div className="flex justify-center mt-2">
             <ToggleTheme />
-          </div>
+          </div> */}
         </div>
       )}
     </>
