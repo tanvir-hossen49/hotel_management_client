@@ -1,3 +1,6 @@
+import CounterButton from "../../Button/CounterButton";
+import Icon from "../../Icon/Icon";
+
 const GuestCounter = ({ guestCounts, setGuestCounts }) => {
   const increment = name => {
     setGuestCounts(prev =>
@@ -24,25 +27,15 @@ const GuestCounter = ({ guestCounts, setGuestCounts }) => {
           <span className="block font-medium text-gray-700">
             {guestCount.name}
           </span>
-          <div className="flex items-center">
-            <button
-              onClick={() => decrement(guestCount.name)}
-              className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
-            >
-              -
-            </button>
-            <input
-              type="text"
-              value={guestCount.count}
-              readOnly
-              className="w-12 text-center mx-2 border border-gray-300 rounded"
-            />
-            <button
-              onClick={() => increment(guestCount.name)}
-              className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
-            >
-              +
-            </button>
+          <div className="flex items-center mx-auto border border-gray-200 rounded-md">
+            <CounterButton onClick={() => decrement(guestCount.name)}>
+              <Icon name="plus" />
+            </CounterButton>
+            <div className="w-12 text-center mx-2">{guestCount.count}</div>
+
+            <CounterButton onClick={() => increment(guestCount.name)}>
+              <Icon name="plus" />
+            </CounterButton>
           </div>
         </div>
       ))}

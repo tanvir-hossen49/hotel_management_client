@@ -9,11 +9,13 @@ const Features = lazy(() => import("../pages/Features/Features"));
 const Blog = lazy(() => import("../pages/Blog/Blog"));
 const Contact = lazy(() => import("../pages/Contact/Contact"));
 const Home = lazy(() => import("../pages/Home/Home"));
+const Error = lazy(() => import("../pages/Error/Error"));
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",

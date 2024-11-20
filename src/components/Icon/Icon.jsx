@@ -1,5 +1,3 @@
-import React from "react";
-
 const Icon = ({
   name,
   size = 24,
@@ -135,6 +133,31 @@ const Icon = ({
         <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
         <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />
         <path d="m2 2 20 20" />
+      </svg>
+    ),
+    minus: (
+      <svg
+        width={size}
+        height={size}
+        fill={fill}
+        stroke={stroke}
+        strokeWidth={strokeWidth}
+        viewBox="0 0 24 24"
+      >
+        <path d="M5 12h14" />
+      </svg>
+    ),
+    plus: (
+      <svg
+        width={size}
+        height={size}
+        fill={fill}
+        stroke={stroke}
+        strokeWidth={strokeWidth}
+        viewBox="0 0 24 24"
+      >
+        <path d="M5 12h14" />
+        <path d="M12 5v14" />
       </svg>
     ),
     downArrow: (
