@@ -10,10 +10,12 @@ const Banner = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="flex h-[650px] w-full flex-col justify-center items-center"
+      className="flex h-[100vh] w-full flex-col items-center relative"
     >
-      <BannerContent />
+      <div className="absolute md:top-48 top-20">
+        <BannerContent />
       <AvailabilityChecker />
+      </div>
     </div>
   );
 };
