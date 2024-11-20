@@ -166,7 +166,11 @@ const Signup = () => {
 
       {/* button */}
       <div className="mt-5 text-center">
-        <AnimatedButton disabled={loading} className="md:w-2/3">
+        <AnimatedButton
+          disabled={loading}
+          className="md:w-2/3"
+          ariaLabel="sign up for create account"
+        >
           {loading ? "Loading..." : "Register"}{" "}
         </AnimatedButton>
       </div>

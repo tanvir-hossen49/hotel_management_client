@@ -19,7 +19,10 @@ const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
         <div className="hidden md:flex items-center space-x-4">
           <CurrencySelector />
           <NavLink to="/signup">
-            <Button className="bg-[#43b45e] text-white p-2 rounded">
+            <Button
+              className="bg-[#43b45e] text-white p-2 rounded"
+              ariaLabel="Sign up for an account"
+            >
               Sign Up
             </Button>
           </NavLink>
@@ -27,24 +30,26 @@ const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden"
+        <Button
+          className="md:hidden border-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          ariaLabel={isMenuOpen ? "Close" : "Open"}
         >
-          <div className="border p-1 rounded-full">
-            <Icon name={isMenuOpen ? "close" : "menu"} />
-          </div>
-        </button>
+          <Icon name={isMenuOpen ? "close" : "menu"} />
+        </Button>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="bg-white py-3 md:hidden mt-4 space-y-4 text-center">
+        <div className="py-3 md:hidden mt-4 space-y-4 text-center w-1/2">
           <NavLinks onClick={() => setIsMenuOpen(false)} />
           <CurrencySelector />
 
           <NavLink to="/signup">
-            <Button className="bg-[#43b45e] text-white p-2 mt-2 rounded">
+            <Button
+              className="bg-[#43b45e] text-white p-2 mt-2 rounded"
+              ariaLabel="Sign up for an account"
+            >
               Sign Up
             </Button>
           </NavLink>

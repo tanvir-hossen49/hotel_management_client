@@ -16,7 +16,7 @@ const StickyNav = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <nav
       className={`${
-        isMenuOpen || isSticky ? "bg-white shadow-md" : "bg-transparent"
+        isSticky ? "shadow-md bg-white" : "bg-transparent"
       } py-4 transition-all duration-300 fixed top-0 left-0 right-0 z-50`}
     >
       <NavItem isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />

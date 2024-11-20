@@ -51,7 +51,9 @@ const Login = () => {
           )}
         </div>
 
-        <AnimatedButton buttonType="login">Log In</AnimatedButton>
+        <AnimatedButton buttonType="login" ariaLabel="Log in">
+          Log In
+        </AnimatedButton>
       </div>
     </form>
   );

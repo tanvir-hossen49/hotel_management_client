@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${bannerImg})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url(${bannerImg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

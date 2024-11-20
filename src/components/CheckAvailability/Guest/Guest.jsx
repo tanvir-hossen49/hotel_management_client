@@ -15,7 +15,15 @@ const Guest = () => {
   useOutsideClick(guestCounterRef, () => setOpenGuestCounter(false));
 
   return (
-    <div className="flex gap-2 cursor-pointer relative p-2 border rounded-md md:flex-row md:gap-4 md:p-4">
+    <div
+      tabIndex={0}
+      className="flex gap-2 cursor-pointer relative p-2 border rounded-md md:flex-row md:gap-4 md:p-4"
+      onKeyDown={e => {
+        if (e.key === "Enter" || e.key === " ") {
+          setOpenGuestCounter(!openGuestCounter);
+        }
+      }}
+    >
       <span>
         <Icon name="user" />
       </span>
