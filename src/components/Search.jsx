@@ -1,5 +1,5 @@
-import Button from "../Button/Button";
-import Icon from "../Icon/Icon";
+import Button from "./Button/Button";
+import Icon from "./Icon/Icon";
 
 const Search = () => {
   return (

@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import CalendarButton from "./CalendarButton";
 import CalendarModal from "./CalendarModal";
-import useOutsideClick from "../../../hooks/useOutsideClick";
+import useOutsideClick from "../../hooks/useOutsideClick";
 
 const Calendar = () => {
   const [openCalendar, setOpenCalendar] = useState(false);

@@ -1,5 +1,5 @@
-import CounterButton from "../../Button/CounterButton";
-import Icon from "../../Icon/Icon";
+import CounterButton from "../Button/CounterButton";
+import Icon from "../Icon/Icon";
 
 const GuestCounter = ({ guestCounts, setGuestCounts }) => {
   const increment = name => {

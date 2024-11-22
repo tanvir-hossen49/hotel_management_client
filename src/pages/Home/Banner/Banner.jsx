@@ -1,6 +1,6 @@
 import bannerImg from "../../../assets/download.webp";
-import CheckAvailability from "../../../components/CheckAvailability/CheckAvailability";
 import BannerContent from "./BannerContent";
+import CheckAvailability from "./CheckAvailability";
 
 const Banner = () => {
   return (

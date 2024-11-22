@@ -1,6 +1,6 @@
-import Calendar from "./Calendar/Calendar";
-import Guest from "./Guest/Guest";
-import Search from "./Search";
+import Calendar from "../../../components/Calendar/Calendar";
+import Guest from "../../../components/Guest/Guest";
+import Search from "../../../components/Search";
 
 const CheckAvailability = () => {
   return (

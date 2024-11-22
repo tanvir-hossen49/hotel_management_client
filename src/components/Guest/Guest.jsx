@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import GuestSummary from "./GuestSummary";
 import GuestCounter from "./GuestCounter";
-import Icon from "../../Icon/Icon";
-import useOutsideClick from "../../../hooks/useOutsideClick";
+import Icon from "../Icon/Icon";
+import useOutsideClick from "../../hooks/useOutsideClick";
 
 const Guest = () => {
   const [openGuestCounter, setOpenGuestCounter] = useState(false);
