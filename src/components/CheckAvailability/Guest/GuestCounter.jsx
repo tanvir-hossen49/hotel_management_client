@@ -29,7 +29,7 @@ const GuestCounter = ({ guestCounts, setGuestCounts }) => {
           </span>
           <div className="flex items-center mx-auto border border-gray-200 rounded-md">
             <CounterButton onClick={() => decrement(guestCount.name)}>
-              <Icon name="plus" />
+              <Icon name="minus" />
             </CounterButton>
             <div className="w-12 text-center mx-2">{guestCount.count}</div>
 

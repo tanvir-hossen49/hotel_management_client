@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const AuthWrapper = ({ heading, subHeading, link, children }) => {
   return (
     <div className="flex justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
-      <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
+      <div>
         <h2 className="text-center text-2xl font-bold leading-tight">
           {heading}
         </h2>
@@ -16,7 +16,6 @@ const AuthWrapper = ({ heading, subHeading, link, children }) => {
             {link === "/signup" ? "Sign Up" : "Log In"}
           </Link>
         </p>
-
         {children}
       </div>
     </div>

@@ -1,5 +1,5 @@
 import bannerImg from "../../../assets/download.webp";
-import AvailabilityChecker from "./AvailabilityChecker";
+import CheckAvailability from "../../../components/CheckAvailability/CheckAvailability";
 import BannerContent from "./BannerContent";
 
 const Banner = () => {
@@ -13,7 +13,7 @@ const Banner = () => {
       className="flex h-[650px] w-full flex-col justify-center items-center"
     >
       <BannerContent />
-      <AvailabilityChecker />
+      <CheckAvailability />
     </div>
   );
 };
