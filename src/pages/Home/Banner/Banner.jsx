@@ -10,10 +10,12 @@ const Banner = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="flex h-[650px] w-full flex-col justify-center items-center"
+      className="flex h-[650px] flex-col justify-center items-center"
     >
-      <BannerContent />
-      <CheckAvailability />
+      <div className="container">
+        <BannerContent />
+        <CheckAvailability />
+      </div>
     </div>
   );
 };

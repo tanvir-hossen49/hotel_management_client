@@ -8,7 +8,7 @@ import CurrencySelector from "./CurrencySelector";
 const NavItem = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <>
-      <div className="flex justify-between items-center px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-between items-center container">
         {/* Branding or Logo */}
         <div className="text-lg font-semibold">Hotel Al Farah</div>
 

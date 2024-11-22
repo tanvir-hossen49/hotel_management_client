@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import MainLayout from "../layout/MainLayout";
 import Loader from "../components/Loader";
+const MainLayout = lazy(() => import("../layout/MainLayout"));
 const Login = lazy(() => import("../pages/Login/Login"));
 const Signup = lazy(() => import("../pages/Signup/Signup"));
 const Rooms = lazy(() => import("../pages/Rooms/Rooms"));
@@ -14,7 +14,11 @@ const Error = lazy(() => import("../pages/Error/Error"));
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: (
+      <Suspense fallback={<Loader />}>
+        <MainLayout />
+      </Suspense>
+    ),
     errorElement: <Error />,
     children: [
       {

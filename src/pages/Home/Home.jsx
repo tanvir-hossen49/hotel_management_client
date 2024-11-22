@@ -2,7 +2,7 @@ import Banner from "./Banner/Banner";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Banner />
       <div className="container">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, saepe
@@ -38,7 +38,7 @@ const Home = () => {
         officia consequatur fugiat repudiandae rerum. Eos a hic ullam quia
         voluptatem porro similique ab amet.
       </div>
-    </div>
+    </>
   );
 };
 

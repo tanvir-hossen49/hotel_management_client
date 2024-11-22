@@ -1,6 +1,7 @@
-import React from "react";
+import useTitle from "../../hooks/useTitle";
 
 const Features = () => {
+  useTitle("Features");
   return <div>This is a Feature page</div>;
 };
 
